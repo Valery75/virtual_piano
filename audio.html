@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Virtual Piano</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        *::after, *::before {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-width: 1080px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            line-height: 20px;
+
+            margin: 0 auto;
+            background-color: rgb(79, 36, 179);
+        }
+        kdb {
+            display: inline-block;
+
+        }
+        .key {
+            width: 6%;
+            height: 400px;
+            background-color: white;
+            border: 2px solid black;
+            text-align: center;
+            vertical-align: bottom;
+            font-size: 18px;
+            font-weight: 600;
+            color: black;
+            padding-top: 300px;
+        }
+        .white-keys {
+            display: flex;
+            justify-content: center;
+            align-items: self-end;
+            overflow: hidden;
+            min-height: 80vh;
+        }
+        .black-keys {
+            position: relative;
+            left: 430px;
+            bottom: 200px;
+        }
+        .keyBlack:nth-child(1) {
+            margin-left: 55px;
+        }
+        .keyBlack:nth-child(3) {
+            margin-left: 115px;
+        }
+
+
+        .keyBlack {
+            width: 8%;
+            height: 400px;
+            background-color: black;
+            border: 2px solid black;
+            text-align: center;
+            vertical-align: bottom;
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            margin-left: 30px;
+            padding: 195px 20px 50px 20px;
+        }
+    </style>
+</head>
+<body>
+<div class = "container">
+<div class="white-keys">
+    <kbd class="key">A</kbd>
+    <kbd class="key">S</kbd>
+    <kbd class="key">D</kbd>
+    <kbd class="key">F</kbd>
+    <kbd class="key">G</kbd>
+    <kbd class="key">H</kbd>
+    <kbd class="key">J</kbd>
+</div>
+<div class="black-keys">
+    <kbd class="keyBlack">W</kbd>
+    <kbd class="keyBlack">E</kbd>
+    <kbd class="keyBlack">T</kbd>
+    <kbd class="keyBlack">Y</kbd>
+    <kbd class="keyBlack">U</kbd>
+</div>
+
+</div>
+<script>
+    document.addEventListener("keydown", function (event) {
+        if(event.code === "KeyA") {
+            let audio = createAudioKey("A");
+            audio.play();
+        }else if(event.code === "KeyS"){
+            let audio = createAudioKey("S");
+            audio.play();
+        }else if(event.code === "KeyD"){
+            let audio = createAudioKey("D");
+            audio.play();
+        }else if(event.code === "KeyF"){
+            let audio = createAudioKey("F");
+            audio.play();
+        }else if(event.code === "KeyG"){
+            let audio = createAudioKey("G");
+            audio.play();
+        }else if(event.code === "KeyH"){
+            let audio = createAudioKey("H");
+            audio.play();
+        }else if(event.code === "KeyJ"){
+            let audio = createAudioKey("J");
+            audio.play();
+        }else if(event.code === "KeyE"){
+            let audio = createAudioKey("E");
+            audio.play();
+        }else if(event.code === "KeyT"){
+            let audio = createAudioKey("T");
+            audio.play();
+        }else if(event.code === "KeyU"){
+            let audio = createAudioKey("U");
+            audio.play();
+        }else if(event.code === "KeyW"){
+            let audio = createAudioKey("W");
+            audio.play();
+        }else if(event.code === "KeyY") {
+            let audio = createAudioKey("Y");
+            audio.play();
+        }else{
+            alert("Please, press a valid key.");
+        }
+    });
+
+    function createAudioKey(key){
+        let path = key+".mp3";
+        let audio = new Audio(path);
+        return audio;
+    }
+
+</script>
+</body>
+</html>
